@@ -1,0 +1,51 @@
+<html>
+<head>
+<title> javascript demo </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+
+function validate()
+{
+
+alert("you have registered successfully");
+}
+</script>
+<Style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("back.gif");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+</style>
+
+
+<body>
+ <div class="bg" >
+ <form action=""  onsubmit="return validate()">
+
+UserName:<input type="text" id="uid" name="uid">  <br> <br>
+Password:<input type="password" id="pwd" name="pwd"> <br><Br>
+email:<input type="text"  id="aa" name="e1"><br><br>
+phone:<input type="text" id="phno" name="phno"><br><br>
+
+<input type="submit"  value="Register" id="reg">
+
+ </form>
+ </div>
+</body>
+</html>

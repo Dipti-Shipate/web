@@ -1,0 +1,106 @@
+<html>
+<head>
+<title> javascript demo </title>
+
+
+
+<script>
+
+function validate()
+{
+var uid=document.getElementById("uid").value;
+var pwd=document.getElementById("pwd").value;
+var email=document.getElementById("email").value;
+var phone=document.getElementById("phno").value;
+//alert(uid);
+//var regx=/[a-z A-Z]00/;
+//var regx=/[sdp]imple/;
+//var regx=/[^1a-xA-Z]00/;
+var regx=/^([a-z A-Z 0-9\.-]+)@([a-z A-Z 0-9]+)\.([a-z]+)$/;
+var regx1=/^[7-9]\d{9}/;
+
+if(regx.test(email))
+{
+    if(regx1.test(phone))
+   {
+
+if(uid=="" && pwd==""){
+    alert("Please Enter the USERNAME AND PASWORD");
+document.getElementById("uid").focus();
+document.getElementById("pwd").focus();
+return false;
+
+ 
+}
+
+else if(uid==""){
+alert("Please Enter the USERNAME");
+document.getElementById("uid").focus();
+return false;
+} 
+
+else if(pwd=="")
+{
+alert("Please Enter the PASSWORD");
+document.getElementById("pwd").focus();
+return false;
+}
+else if(uid=="admin" && pwd=="admin"){
+
+alert("WELCOME ADMIN");
+return true;
+}
+
+else if(uid == "admin" && pwd != "admin"){
+alert("Please Enter the VALID PASSWORD");
+document.getElementById("pwd").focus();
+return false;
+}
+else if(pwd == "admin" && uid != "admin"){
+alert("Please Enter the VALID USERNAME");
+document.getElementById("uid").focus();
+return false;
+}
+
+else if(uid!="admin" && pwd!="admin")
+alert("Please Enter the Valid UID AND PWD");
+return false;
+}
+}
+
+else
+{
+     alert("invalid phone or email or username");
+     document.getElementById("email").focus();
+     document.getElementById("phno").focus();
+    return false;
+
+
+
+}
+
+
+
+
+
+
+}
+</script>
+
+</head>
+
+
+<body>
+ 
+ <form action=""  onsubmit="return validate()">
+
+UserName:<input type="text" id="uid" name="uid">  <br> <br>
+Password:<input type="password" id="pwd" name="pwd"> <br><Br>
+email:<input type="text"  id="email" name="email"><br><br>
+phone:<input type="text" id="phno" name="phone"><br><br>
+
+<input type="submit"  value="Login">
+
+ </form>
+</body>
+</html>
